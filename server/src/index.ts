@@ -17,8 +17,7 @@ const apiLimiter = rateLimit({
 
 app.use(cors());
 app.use(express.json());
-
-app.use('/api', apiLimiter);
+app.use(apiLimiter);
 app.use('/api/crew', crewRouter);
 app.use('/api/assignments', assignmentsRouter);
 
